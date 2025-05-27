@@ -1,0 +1,13 @@
+[project]
+name = "botkursach"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiogram>=3.20.0.post0",
+    "pdfrw>=0.4",
+    "python-dotenv>=1.1.0",
+    "reportlab>=4.4.1",
+    "requests>=2.32.3",
+]
