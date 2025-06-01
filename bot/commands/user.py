@@ -1,6 +1,4 @@
 import bot.keyboards.user as bku
-
-
 from aiogram import Router, types, F
 from aiogram.filters import Command, CommandObject
 from aiogram.fsm.context import FSMContext

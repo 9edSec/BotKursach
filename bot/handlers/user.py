@@ -111,11 +111,10 @@ async def handle_answer(callback: CallbackQuery):
         msg = await callback.message.answer(f"Вопрос {next_q+1}:\n{question}", reply_markup=create_answer_kb(next_q))
     else:
         
-        msg = await callback.message.answer("Вы прошли все вопросы. Нажмите кнопку ниже для проверки.", reply_markup=bku.check_kb)
+        await callback.message.answer("Вы прошли все вопросы. Нажмите кнопку ниже для проверки.", reply_markup=bku.check_kb)
     await callback.answer()
 
-    await asyncio.sleep(45)
-    await msg.delete()
+   
 
 
 @router_handler_user.callback_query(F.data == "check_answers")
@@ -141,11 +140,9 @@ async def check_answers(callback: CallbackQuery):
     if correct_count <= 7:
         await callback.message.answer("Для получения сертификата, нужно не менее 7 правильных ответов, иди готовься!", reply_markup=bku.restart_test_kb)
     else:
-        cert_msg = await callback.message.answer("Нажмите на кнопку нижу, чтобы получить сертификат!", reply_markup=bku.get_certificate_kb)
+        await callback.message.answer("Нажмите на кнопку нижу, чтобы получить сертификат!", reply_markup=bku.get_certificate_kb)
 
-        await asyncio.sleep(5)
         
-        await cert_msg.delete()
 
 user_data = {}
 

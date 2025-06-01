@@ -2,7 +2,7 @@ import json
 
 from aiogram.types import (
     ReplyKeyboardMarkup, KeyboardButton,
-    InlineKeyboardMarkup, InlineKeyboardButton 
+    InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 )
 
 from aiogram.utils.keyboard import ReplyKeyboardBuilder, \
@@ -32,7 +32,7 @@ def kb_get_certificate():
     kb = InlineKeyboardBuilder()
 
     kb.button(
-        text=msg.user_keyboard['kb_get_certificate']['study_materials'], url="", callback_data='ca_study_materials'
+        text=msg.user_keyboard['kb_get_certificate']['study_materials'], web_app=WebAppInfo(url="https://pressf-school.ru")
     )
 
     kb.button(
